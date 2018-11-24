@@ -1,24 +1,53 @@
 var five = require("johnny-five");
 var board = new five.Board();
-
+var express = require("express");
+var app = express();
 var convert = require("./convert-water-level.js");
 
+app.set("view engine", "ejs");
 
+//initialize water level sensor
+class SensorData {
+  constructor(pin, freq, location){
+    this.pin = pin;
+    this.freq = freq;
+    this.location = location;
+    this.analog = 0;
+    this.millimeters = 0;
+    this.percentage = 0;
+  }
+  toString(){
+    return `Analog Level: ${this.analog} Depth: ${this.millimeters}mm Percentage: ${this.percentage.toFixed(1)}%`;
+  }
+}
 
+var sensorDataOne = new SensorData("A0",1000, "Location 1");
+var sensors = [sensorDataOne];
+
+// express setup
+app.get("/", (req,res) => {
+  res.render("index", {sensors});
+});
+
+app.listen(3000, () => {
+  console.log("server started");
+});
+
+// arduino setup
 board.on("ready", function() {
-  var sensor = new five.Sensor({
-    pin: "A0",
-    freq: 1000
+  var sensorOne = new five.Sensor({
+    pin: sensorDataOne.pin,
+    freq: sensorDataOne.freq
   });
 
-  sensor.on("data", function() {
+  sensorOne.on("data", function() {
     // this.analog approximately ranges from 40 - 80
     convert.getWaterLevel(this.analog,(millimeters, percentage) => {
+      sensorDataOne.analog = this.analog;
+      sensorDataOne.millimeters = millimeters;
+      sensorDataOne.percentage = percentage;
       console.log("Water Level: ");
-      console.log("analog: "+ this.analog);
-      console.log(`${millimeters}mm`);
-      console.log(`${percentage}%`);
-      console.log("\n")
+      console.log(sensorDataOne.toString());
     });
   });
 });
