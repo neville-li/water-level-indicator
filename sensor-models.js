@@ -8,7 +8,7 @@ class WaterSensor {
     this.percentage = 0;
   }
   toString(){
-    return `Water Level:\nAnalog Level: ${this.analog} Depth: ${this.millimeters}mm Percentage: ${this.percentage.toFixed(1)}%`;
+    return `Water Level:\nAnalog Level: ${this.analog} Depth: ${this.millimeters}mm Percentage: ${this.percentage}%`;
   }
 }
 module.exports = {

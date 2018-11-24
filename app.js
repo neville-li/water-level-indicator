@@ -22,7 +22,7 @@ board.on("ready", function() {
   });
 
   sensorOne.on("data", function() {
-    // this.analog approximately ranges from 40 - 80
+    // this.analog approximately ranges from 30 - 85
     convert.getWaterLevel(this.analog, (millimeters, percentage) => {
       waterSensors[0].analog = this.analog;
       waterSensors[0].millimeters = millimeters;
