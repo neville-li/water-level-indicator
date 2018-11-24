@@ -4,6 +4,7 @@ var express = require("express");
 var app = express();
 var convert = require("./convert-water-level.js");
 
+app.use(express.static(__dirname + '/public'));
 app.set("view engine", "ejs");
 
 //initialize water level sensor
@@ -21,12 +22,13 @@ class SensorData {
   }
 }
 
-var sensorDataOne = new SensorData("A0",1000, "Location 1");
+//Create instance for sensors
+var sensorDataOne = new SensorData("A0",1000, "UH");
 var sensors = [sensorDataOne];
 
 // express setup
 app.get("/", (req,res) => {
-  res.render("index", {sensors});
+  res.render("index",{sensors});
 });
 
 app.listen(3000, () => {
@@ -34,6 +36,7 @@ app.listen(3000, () => {
 });
 
 // arduino setup
+
 board.on("ready", function() {
   var sensorOne = new five.Sensor({
     pin: sensorDataOne.pin,

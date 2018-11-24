@@ -7,13 +7,36 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <title>Hello, world!</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <title>Weather App</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
-    <%= sensors[0].location %>
-    <p> <%= sensors[0].millimeters %> </p>
+    <div class="jumbotron jumbotron-fluid py-0">
+      <div id="header"></div>
+      <h1 class="text-center display-3">ELET 3402</h1>
+      <p class=" text-center lead ">Water Level indicator</p>
+      <p class=" text-center my-1">Andres Escobar</p>
+      <p class=" text-center my-1">Jose Ixba</p>
+      <p class=" text-center my-1">Neville Li</p>
+      <div class="container">
+        <div class="row">
+          <div class="mx-auto col-4">
+            <a href="#data" class="btn btn-info btn-lg btn-block my-4">Get Started!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="data" class="container">
+      <h1 class="mb-5">Monitoring Water Level</h1>
+      <div  class="d-flex justify-content-between">
+        <% sensors.forEach(sensor => { %>
+          <div class="border border-dark p-3 m-auto">
+            <h3 class="display-4">Location: <%= sensor.location %></h3>
+            <h3 class="display-4">Depth: <%= sensor.millimeters %>mm</h3>
+          </div>
+        <% }); %>
+      </div>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
