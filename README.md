@@ -22,7 +22,7 @@ ELET 3402 final project
 7. At this time, you should see the data that is being sent back to the arduino on the website.
 
 ## Video Demonstration
-Click the image below
+
 [![Thumbnail](https://raw.githubusercontent.com/friendlyDishwasher/water-level-sensor/master/markdown-images/youtube-thumbnail.jpg)](https://youtu.be/d1_fv4YILrM)
 
 
