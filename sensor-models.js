@@ -6,6 +6,7 @@ class WaterSensor {
     this.analog = 0;
     this.millimeters = 0;
     this.percentage = 0;
+    this.color = "";
   }
   toString(){
     return `Water Level:\nAnalog Level: ${this.analog} Depth: ${this.millimeters}mm Percentage: ${this.percentage}%`;

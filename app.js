@@ -12,7 +12,6 @@ app.set("view engine", "ejs");
 //initialize water level sensor
 var waterSensors = [];
 waterSensors.push(new model.WaterSensor("A0", 1000, "UH"));
-
 // arduino setup
 
 board.on("ready", function() {
@@ -28,6 +27,13 @@ board.on("ready", function() {
       waterSensors[0].millimeters = millimeters;
       waterSensors[0].percentage = percentage;
       console.log(waterSensors.toString());
+      if(percentage > 70) {
+        waterSensors[0].color = "danger";
+      } else if (percentage > 40){
+        waterSensors[0].color = "warning";
+      } else {
+        waterSensors[0].color = "success";
+      }
     });
   });
 });
@@ -40,3 +46,7 @@ app.get("/", (req,res) => {
 app.listen(port, () => {
   console.log("server started");
 });
+
+setInterval(() => {
+
+}, 500)
