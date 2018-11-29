@@ -1,4 +1,4 @@
-water-level-sensor
+#water-level-sensor
 ELET 3402 final project
 
 ## Prerequisites
@@ -9,6 +9,8 @@ ELET 3402 final project
 1. Download and install Node.js (https://nodejs.org/en/download/)
 2. Downloand and install the Arduino IDE (https://www.elegoo.com/download/)
 
+## Schematic
+
 ## Getting Started
 1. Open Arduino IDE. In the menu, click Tools>Port, and select the port that is connected to the computer.
 2. Get a copy of the project from https://github.com/friendlyDishwasher/water-level-sensor 
@@ -18,6 +20,8 @@ ELET 3402 final project
 6. Open a browser, go to address bar, then type "localhost:3000" (without quotes). Then hit enter.
 7. At this time, you should see the data that is being sent back to the arduino on the website.
 
+## Video Demonstration
+* https://www.youtube.com/watch?v=d1_fv4YILrM
 
 
 
