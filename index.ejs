@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="jumbotron jumbotron-fluid py-0">
+      <div id="header"></div>
+      <h1 class="text-center display-3">ELET 3402</h1>
+      <p class=" text-center lead ">Water Level indicator</p>
+      <p class=" text-center my-1">Andres Escobar</p>
+      <p class=" text-center my-1">Jose Ixba</p>
+      <p class=" text-center my-1">Neville Li</p>
+      <div class="container ">
+        <div class="row justify-content-center">
+          <div class="col-4">
+            <a href="#data" class="btn btn-info btn-lg btn-block my-4">Get Started!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="data" class="container">
+      <h1 class="mb-5 text-center">Monitoring Water Level</h1>
+      <div  class="d-flex justify-content-between">
+        <% sensors.forEach(sensor => { %>
+          <div class="border bg-white p-3 m-auto">
+            <h3 class="display-4">Location: <%= sensor.location %></h3>
+            <h3 class="display-4">Analog Level: <%= sensor.analog %></h3>
+            <h3 class="display-4">Depth: <%= sensor.millimeters %>mm</h3>
+            <div class="progress">
+  <div class="progress-bar progress-bar-striped progress-bar-animated bg-<%= sensor.color %>" role="progressbar" style="width: <%= sensor.percentage %>%"><span id="percentageIndicator"><%= sensor.percentage %>%</span></div>
+</div>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
