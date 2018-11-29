@@ -14,7 +14,8 @@ ELET 3402 final project
 
 ## Getting Started
 1. Open Arduino IDE. In the menu, click Tools>Port, and select the port that is connected to the computer.
-2. Get a copy of the project from https://github.com/friendlyDishwasher/water-level-sensor 
+2. Go to File>Examples>Frimata>StandardFirmata, and upload StandardFirmata to the Arduino.
+2. Get a copy of the project from https://github.com/friendlyDishwasher/water-level-indicator. 
 3. Open Powershell/CMD(for Windows) or Terminal(for Linux), and go to the root folder of the project.
 4. Inside your terminal/Powershell, type "npm install express ejs johnny-five" (without quotes) to install all the modules needed.
 5. Run "node app.js" (without quotes) to start the program.
