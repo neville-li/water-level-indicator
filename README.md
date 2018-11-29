@@ -1,4 +1,4 @@
-#water-level-sensor
+# water-level-sensor
 ELET 3402 final project
 
 ## Prerequisites
@@ -10,6 +10,7 @@ ELET 3402 final project
 2. Downloand and install the Arduino IDE (https://www.elegoo.com/download/)
 
 ## Schematic
+![Image of Schematic](https://raw.githubusercontent.com/friendlyDishwasher/water-level-sensor/master/markdown-images/schematic.png)
 
 ## Getting Started
 1. Open Arduino IDE. In the menu, click Tools>Port, and select the port that is connected to the computer.
@@ -21,7 +22,7 @@ ELET 3402 final project
 7. At this time, you should see the data that is being sent back to the arduino on the website.
 
 ## Video Demonstration
-* https://www.youtube.com/watch?v=d1_fv4YILrM
+* [![Thumbnail](https://raw.githubusercontent.com/friendlyDishwasher/water-level-sensor/master/markdown-images/youtube-thumbnail.jpg)](https://youtu.be/d1_fv4YILrM)
 
 
 
