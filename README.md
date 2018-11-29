@@ -22,7 +22,7 @@ ELET 3402 final project
 6. Open a browser, go to address bar, then type "localhost:3000" (without quotes). Then hit enter.
 7. At this time, you should see the data that is being sent back to the arduino on the website.
 
-## Video Demonstration
+## Video Demo
 
 [![Thumbnail](https://raw.githubusercontent.com/friendlyDishwasher/water-level-sensor/master/markdown-images/youtube-thumbnail.jpg)](https://youtu.be/d1_fv4YILrM)
 
