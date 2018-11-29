@@ -1,4 +1,4 @@
-# water-level-sensor
+# water-level-indicator
 ELET 3402 final project
 
 ## Prerequisites
