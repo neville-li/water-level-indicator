@@ -2,7 +2,7 @@
 ELET 3402 final project
 
 ## Prerequisites
-* Arduino Uno x2
+* Arduino Uno x1
 * Wingoneer Water Level Sensor x1
 
 ## Installing
