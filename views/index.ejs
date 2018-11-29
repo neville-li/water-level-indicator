@@ -32,7 +32,11 @@
         <% sensors.forEach(sensor => { %>
           <div class="border border-dark p-3 m-auto">
             <h3 class="display-4">Location: <%= sensor.location %></h3>
+            <h3 class="display-4">Analog Level: <%= sensor.analog %></h3>
             <h3 class="display-4">Depth: <%= sensor.millimeters %>mm</h3>
+            <div class="progress">
+  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: <%= sensor.percentage %>%"><span id="percentageIndicator"><%= sensor.percentage %>%</span></div>
+</div>
           </div>
         <% }); %>
       </div>
