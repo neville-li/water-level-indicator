@@ -6,10 +6,22 @@ class WaterSensor {
     this.analog = 0;
     this.millimeters = 0;
     this.percentage = 0;
-    this.color = "";
+    this.state = "";
   }
   toString(){
-    return `Water Level:\nAnalog Level: ${this.analog} Depth: ${this.millimeters}mm Percentage: ${this.percentage}%`;
+    return `Location: ${this.location}\nAnalog Level: ${this.analog} Depth: ${this.millimeters}mm Percentage: ${this.percentage}%`;
+  }
+  update(analog, millimeters, percentage){
+    this.analog = analog;
+    this.millimeters = millimeters;
+    this.percentage = percentage;
+    if(percentage > 70) {
+      this.state = "danger";
+    } else if (percentage > 40){
+      this.state = "warning";
+    } else {
+      this.state = "success";
+    }
   }
 }
 module.exports = {

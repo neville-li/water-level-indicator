@@ -27,7 +27,7 @@
       </div>
     </div>
     <div id="data" class="container">
-      <h1 class="mb-5">Monitoring Water Level</h1>
+      <h1 class="mb-5 text-center">Monitoring Water Level</h1>
       <div  class="d-flex justify-content-between">
         <% sensors.forEach(sensor => { %>
           <div class="border bg-white p-3 m-auto">
@@ -35,7 +35,7 @@
             <h3 class="display-4">Analog Level: <%= sensor.analog %></h3>
             <h3 class="display-4">Depth: <%= sensor.millimeters %>mm</h3>
             <div class="progress">
-  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: <%= sensor.percentage %>%"><span id="percentageIndicator"><%= sensor.percentage %>%</span></div>
+  <div class="progress-bar progress-bar-striped progress-bar-animated bg-<%= sensor.state %>" role="progressbar" style="width: <%= sensor.percentage %>%"><span id="percentageIndicator"><%= sensor.percentage %>%</span></div>
 </div>
           </div>
         <% }); %>

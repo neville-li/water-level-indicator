@@ -23,17 +23,8 @@ board.on("ready", function() {
   sensorOne.on("data", function() {
     // this.analog approximately ranges from 30 - 85
     convert.getWaterLevel(this.analog, (millimeters, percentage) => {
-      waterSensors[0].analog = this.analog;
-      waterSensors[0].millimeters = millimeters;
-      waterSensors[0].percentage = percentage;
-      console.log(waterSensors.toString());
-      if(percentage > 70) {
-        waterSensors[0].color = "danger";
-      } else if (percentage > 40){
-        waterSensors[0].color = "warning";
-      } else {
-        waterSensors[0].color = "success";
-      }
+    waterSensors[0].update(this.analog, millimeters, percentage);
+    console.log(waterSensors[0].toString());
     });
   });
 });
